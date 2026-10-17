@@ -1,0 +1,18 @@
+{
+  "title": "My Digital Space",
+  "subtitle": "Everything I've built, in one place.",
+  "owner": "Your Name",
+  "github": "https://github.com/YOUR_USERNAME/YOUR_REPOSITORY",
+  "starButton": {
+    "enabled": true,
+    "text": "If you like my projects, consider starring my repo",
+    "repoUrl": "https://github.com/YOUR_USERNAME/YOUR_REPOSITORY"
+  },
+  "theme": {
+    "default": "system",
+    "allowToggle": true
+  },
+  "animation": {
+    "enabled": true
+  }
+}
