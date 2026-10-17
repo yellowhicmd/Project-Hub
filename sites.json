@@ -1,0 +1,31 @@
+{
+  "sites": [
+    {
+      "id": "quillio",
+      "name": "Quillio",
+      "url": "https://your-quillio.pages.dev",
+      "description": "A community platform for sharing ideas.",
+      "icon": "https://your-quillio.pages.dev/favicon.ico",
+      "category": "Web App",
+      "featured": true
+    },
+    {
+      "id": "portfolio",
+      "name": "My Portfolio",
+      "url": "https://your-portfolio.pages.dev",
+      "description": "My personal portfolio and projects.",
+      "icon": "",
+      "category": "Personal",
+      "featured": true
+    },
+    {
+      "id": "experiments",
+      "name": "Experiments",
+      "url": "https://your-experiments.pages.dev",
+      "description": "Small projects and experiments.",
+      "icon": "",
+      "category": "Tools",
+      "featured": false
+    }
+  ]
+}
