@@ -235,8 +235,7 @@
     const card = document.createElement("a");
     card.className = "site-card";
 
-    // Open the project's detail page first, where the user can star the repo
-    // or continue to the configured website.
+    // Keep the original flow: open this project's internal detail page first.
     card.href = resolveURL(
       `projects/?site=${encodeURIComponent(site.id)}`
     );
@@ -421,7 +420,9 @@
     const starCard = $("#star-card");
 
     if (starCard) {
-      const repoURL = safeURL(starSettings.repoUrl || "");
+      // Each project's star button must point to that project's own repository.
+      // The settings-level repoUrl remains a fallback for older site entries.
+      const repoURL = safeURL(site.githubRepo || site.repoUrl || starSettings.repoUrl || "");
       starCard.hidden = starSettings.enabled === false || !repoURL;
 
       const starLink = $("#star-link");
@@ -430,6 +431,11 @@
       if (starLink) {
         starLink.target = "_blank";
         starLink.rel = "noopener noreferrer";
+        starLink.setAttribute("aria-label", `Star ${site.name} on GitHub`);
+        const textNode = Array.from(starLink.childNodes).find(
+          (node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim()
+        );
+        if (textNode) textNode.textContent = ` Star ${site.name} on GitHub`;
       }
 
       const message = $("#star-message");

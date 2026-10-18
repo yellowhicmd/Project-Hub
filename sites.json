@@ -7,7 +7,8 @@
       "description": "A website hosting a collection of all my GD Macros.",
       "icon": "https://your-quillio.pages.dev/favicon.ico",
       "category": "Web App",
-      "featured": true
+      "featured": true,
+      "githubRepo": "https://github.com/yellowhicmd/GD-Macros"
     },
     {
       "id": "gd-download",
@@ -16,7 +17,8 @@
       "description": "A website to download Geometry Dash for free",
       "icon": "",
       "category": "Personal",
-      "featured": true
+      "featured": true,
+      "githubRepo": "https://github.com/yellowhicmd/GD-Download"
     }
   ]
 }

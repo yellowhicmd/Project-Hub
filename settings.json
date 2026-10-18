@@ -5,7 +5,7 @@
   "github": "https://github.com/yellowhicmd/",
   "starButton": {
     "enabled": true,
-    "text": "If you like my projects, consider starring my repo",
+    "text": "If you like this project, consider starring its repository.",
     "repoUrl": "https://github.com/yellowhicmd/GD-Macros"
   },
   "theme": {
