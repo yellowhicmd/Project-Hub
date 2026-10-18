@@ -9,6 +9,55 @@
   <link rel="icon" href="https://github.com/favicon.ico">
   <link rel="stylesheet" href="./style.css">
   <script src="./app.js" defer></script>
+  <style>
+    /* Mobile fix: keep the closing message readable instead of squeezing it. */
+    @media (max-width: 600px) {
+      .closing-card {
+        display: grid;
+        grid-template-columns: 52px minmax(0, 1fr);
+        align-items: start;
+        column-gap: 16px;
+        row-gap: 14px;
+        padding: 22px;
+      }
+      .closing-symbol {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .closing-copy {
+        grid-column: 2;
+        grid-row: 1;
+        width: 100%;
+        min-width: 0;
+      }
+      .closing-copy h2,
+      .closing-copy p {
+        word-break: normal;
+        overflow-wrap: normal;
+      }
+      .closing-copy p {
+        max-width: 100%;
+        line-height: 1.7;
+      }
+      .closing-card > .text-link {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-self: start;
+        white-space: normal;
+      }
+    }
+    @media (max-width: 360px) {
+      .closing-card {
+        grid-template-columns: 44px minmax(0, 1fr);
+        column-gap: 12px;
+        padding: 18px;
+      }
+      .closing-symbol {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="topbar">
@@ -16,24 +65,15 @@
       <span class="brand-mark">✳</span>
       <span id="brand-name">My Digital Space</span>
     </a>
-
     <div class="top-actions">
-      <a class="icon-button github-link"
-         href="https://github.com"
-         target="_blank" rel="noopener"
-         aria-label="GitHub" title="GitHub">
+      <a class="icon-button github-link" href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
         <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path fill="currentColor"
-            d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.08c-3.1.67-3.76-1.31-3.76-1.31-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 .1.66 2.06 3.26 1.49.1-.73.39-1.22.7-1.5-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.16-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.04-1.14 3.04-1.14.61 1.53.23 2.67.12 2.95.72.78 1.15 1.77 1.15 2.99 0 4.29-2.61 5.23-5.1 5.51.4.35.75 1.02.75 2.06v3.05c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/>
+          <path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.08c-3.1.67-3.76-1.31-3.76-1.31-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 .1.66 2.06 3.26 1.49.1-.73.39-1.22.7-1.5-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.16-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.04-1.14 3.04-1.14.61 1.53.23 2.67.12 2.95.72.78 1.15 1.77 1.15 2.99 0 4.29-2.61 5.23-5.1 5.51.4.35.75 1.02.75 2.06v3.05c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/>
         </svg>
       </a>
-
-      <button class="icon-button" id="theme-toggle"
-        type="button" aria-label="Switch color theme"
-        title="Switch theme">
-        <svg class="theme-icon" viewBox="0 0 24 24"
-          aria-hidden="true">
-          <path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.64 5.64l1.42 1.42m9.88 9.88 1.42 1.42m0-12.72-1.42 1.42m-9.88 9.88-1.42 1.42M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/>
+      <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch theme">
+        <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.64 5.64l1.42 1.42m9.88 9.88 1.42 1.42m0-12.72-1.42 1.42m-9.88 9.88-1.42-1.42M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/>
         </svg>
       </button>
     </div>
@@ -41,29 +81,13 @@
 
   <main class="page-shell">
     <section class="hero reveal">
-      <div class="eyebrow">
-        <span class="status-dot"></span>
-        ONE PLACE. ALL MY PROJECTS.
-      </div>
-
-      <h1 id="hero-title">
-        My little corner<br>
-        of the <span class="gradient-text">internet.</span>
-      </h1>
-
-      <p class="hero-description" id="hero-subtitle">
-        Everything I've built, in one place.
-      </p>
-
+      <div class="eyebrow"><span class="status-dot"></span>ONE PLACE. ALL MY PROJECTS.</div>
+      <h1 id="hero-title">My little corner<br>of the <span class="gradient-text">internet.</span></h1>
+      <p class="hero-description" id="hero-subtitle">Everything I've built, in one place.</p>
       <div class="hero-meta">
+        <span class="meta-pill"><span class="status-dot"></span><span id="project-count">0 projects</span></span>
         <span class="meta-pill">
-          <span class="status-dot"></span>
-          <span id="project-count">0 projects</span>
-        </span>
-        <span class="meta-pill">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 3v18M3 12h18"/>
-          </svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18"/></svg>
           Made with curiosity
         </span>
       </div>
@@ -75,31 +99,15 @@
           <p class="section-kicker">THE COLLECTION</p>
           <h2 id="directory-title">Explore my work<span class="accent-dot">.</span></h2>
         </div>
-
-        <span class="collection-label" id="collection-label">
-          ALL PROJECTS
-        </span>
+        <span class="collection-label" id="collection-label">ALL PROJECTS</span>
       </div>
-
       <div class="search-wrap reveal">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="10.8" cy="10.8" r="6.8"/>
-          <path d="m16 16 4.5 4.5"/>
-        </svg>
-        <input id="site-search" type="search"
-          placeholder="Find a project..."
-          aria-label="Search projects"
-          autocomplete="off">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+        <input id="site-search" type="search" placeholder="Find a project..." aria-label="Search projects" autocomplete="off">
         <kbd>/</kbd>
       </div>
-
-      <div id="site-grid" class="site-grid" aria-live="polite">
-        <div class="loading-card">Loading your projects...</div>
-      </div>
-
-      <p id="empty-state" class="empty-state" hidden>
-        No projects found. Try another search.
-      </p>
+      <div id="site-grid" class="site-grid" aria-live="polite"><div class="loading-card">Loading your projects...</div></div>
+      <p id="empty-state" class="empty-state" hidden>No projects found. Try another search.</p>
     </section>
 
     <section class="closing-card reveal">
@@ -108,23 +116,14 @@
         <h2>Curiosity builds things.</h2>
         <p>Thanks for stopping by my little corner of the internet.</p>
       </div>
-      <a class="text-link github-link" href="https://github.com"
-        target="_blank" rel="noopener">
-        Find me on GitHub <span aria-hidden="true">↗</span>
-      </a>
+      <a class="text-link github-link" href="https://github.com" target="_blank" rel="noopener">Find me on GitHub <span aria-hidden="true">↗</span></a>
     </section>
   </main>
 
   <footer class="footer">
-    <span>© <span id="current-year"></span>
-      <span id="footer-owner">Made with curiosity</span>
-    </span>
+    <span>© <span id="current-year"></span> <span id="footer-owner">Made with curiosity</span></span>
     <span>Designed for the web <span class="footer-heart">♥</span></span>
   </footer>
-
-  <noscript>
-    <p>This website directory requires JavaScript to load projects.</p>
-  </noscript>
+  <noscript><p>This website directory requires JavaScript to load projects.</p></noscript>
 </body>
-          </html>
-          
+</html>
