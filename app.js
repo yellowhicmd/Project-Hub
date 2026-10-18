@@ -16,7 +16,6 @@
   };
 
   const resolveURL = (path) => new URL(path, baseURL).href;
-
   async function loadJSON(file) {
     const response = await fetch(resolveURL(file), {
       cache: "no-cache"
@@ -70,7 +69,6 @@
     }
 
     const defaultTheme = themeSettings.default || "system";
-
     function systemTheme() {
       return window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
@@ -82,7 +80,6 @@
 
       document.documentElement.dataset.theme = resolved;
       document.documentElement.style.colorScheme = resolved;
-
       if (toggle) {
         const nextLabel = resolved === "dark"
           ? "Switch to light mode"
@@ -92,7 +89,6 @@
         toggle.title = nextLabel;
 
         const icon = toggle.querySelector("svg");
-
         if (icon) {
           icon.innerHTML = resolved === "dark"
             ? '<path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z"/>'
@@ -103,7 +99,6 @@
       const themeColor = document.querySelector(
         'meta[name="theme-color"]'
       );
-
       if (themeColor) {
         themeColor.content = resolved === "dark" ? "#14121a" : "#f7f5fc";
       }
@@ -122,7 +117,6 @@
 
     if (toggle && themeSettings.allowToggle !== false) {
       toggle.hidden = false;
-
       toggle.addEventListener("click", () => {
         const current = document.documentElement.dataset.theme;
         applyTheme(current === "dark" ? "light" : "dark");
@@ -141,7 +135,6 @@
       } catch {
         // Ignore storage errors.
       }
-
       if (!stored && defaultTheme === "system") {
         applyTheme("system", false);
       }
@@ -159,7 +152,6 @@
 
     const brand = $("#brand-name");
     if (brand) brand.textContent = title;
-
     const footerOwner = $("#footer-owner");
     if (footerOwner) footerOwner.textContent = owner;
 
@@ -171,7 +163,6 @@
       link.target = "_blank";
       link.rel = "noopener noreferrer";
     });
-
     const subtitle = $("#hero-subtitle");
     if (subtitle && settings.subtitle) {
       subtitle.textContent = settings.subtitle;
@@ -187,7 +178,6 @@
         })
       );
     }
-
     const ownerElement = $("#project-owner");
     if (ownerElement) ownerElement.textContent = title;
 
@@ -206,7 +196,6 @@
     const faviconURL = new URL("https://www.google.com/s2/favicons/");
     faviconURL.searchParams.set("domain_url", siteURL);
     faviconURL.searchParams.set("sz", "128");
-
     return faviconURL.href;
   }
 
@@ -222,7 +211,6 @@
     const iconURL = getFavicon(site);
 
     if (!iconURL) return container;
-
     const img = document.createElement("img");
     img.alt = "";
     img.loading = "lazy";
@@ -246,17 +234,19 @@
   function createCard(site, index) {
     const card = document.createElement("a");
     card.className = "site-card";
-    card.href = resolveURL(
-      `projects/?site=${encodeURIComponent(site.id)}`
-    );
+
+    // Each card opens the specific website configured in sites.json.
+    card.href = safeURL(site.url, "#");
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+
     card.style.animationDelay = `${Math.min(index * 65, 400)}ms`;
-    card.setAttribute("aria-label", `View ${site.name}`);
+    card.setAttribute("aria-label", `Visit ${site.name}`);
 
     const top = document.createElement("div");
     top.className = "card-top";
 
     top.appendChild(createIcon(site));
-
     if (site.featured) {
       const badge = document.createElement("span");
       badge.className = "featured-badge";
@@ -272,7 +262,6 @@
 
     const description = document.createElement("p");
     description.textContent = site.description || "Explore this project.";
-
     copy.append(heading, description);
 
     const bottom = document.createElement("div");
@@ -286,7 +275,6 @@
     arrow.className = "card-arrow";
     arrow.textContent = "↗";
     arrow.setAttribute("aria-hidden", "true");
-
     bottom.append(category, arrow);
     card.append(top, copy, bottom);
 
@@ -311,7 +299,6 @@
     });
 
     grid.replaceChildren();
-
     filtered.forEach((site, index) => {
       grid.appendChild(createCard(site, index));
     });
@@ -324,7 +311,6 @@
       count.textContent =
         `${state.sites.length} project${state.sites.length === 1 ? "" : "s"}`;
     }
-
     const collection = $("#collection-label");
     if (collection) {
       collection.textContent = query
@@ -344,7 +330,6 @@
 
     document.addEventListener("keydown", (event) => {
       const target = event.target;
-
       const isTyping = target instanceof HTMLElement &&
         (target.isContentEditable ||
           ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName));
@@ -372,7 +357,6 @@
     if (!site) {
       const heading = $("#project-title");
       const description = $("#project-description");
-
       if (heading) heading.textContent = "Project not found";
       if (description) {
         description.textContent =
@@ -388,7 +372,6 @@
       document.title = "Project not found";
       return;
     }
-
     document.title = `${site.name} | ${state.settings.title || "My Digital Space"}`;
 
     const heading = $("#project-title");
@@ -403,7 +386,6 @@
     if (category) category.textContent = site.category || "WEB PROJECT";
 
     const frame = $("#project-icon-frame");
-
     if (frame) {
       const icon = createIcon(site, "project-icon-image");
       frame.replaceChildren();
@@ -439,7 +421,6 @@
 
     if (starCard) {
       const repoURL = safeURL(starSettings.repoUrl || "");
-
       starCard.hidden = starSettings.enabled === false || !repoURL;
 
       const starLink = $("#star-link");
@@ -475,7 +456,6 @@
         : [];
 
       setupGlobalSettings();
-
       if (isProjectPage) {
         renderProject();
       } else {
@@ -493,7 +473,6 @@
 
           heroTitle.appendChild(line);
         }
-
         setupSearch();
         renderSites();
       }
@@ -512,7 +491,6 @@
       if (heading) heading.textContent = "Unable to load project";
 
       const description = $("#project-description");
-
       if (description) {
         description.textContent =
           "Please check that your JSON files are valid and available.";
@@ -522,4 +500,3 @@
 
   init();
 })();
-         
