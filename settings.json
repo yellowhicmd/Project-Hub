@@ -1,12 +1,12 @@
 {
   "title": "My Digital Space",
   "subtitle": "Everything I've built, in one place.",
-  "owner": "Your Name",
-  "github": "https://github.com/YOUR_USERNAME/YOUR_REPOSITORY",
+  "owner": "yellowhicmd",
+  "github": "https://github.com/yellowhicmd/",
   "starButton": {
     "enabled": true,
     "text": "If you like my projects, consider starring my repo",
-    "repoUrl": "https://github.com/YOUR_USERNAME/YOUR_REPOSITORY"
+    "repoUrl": "https://github.com/yellowhicmd/GD-Macros/tree/main/macros"
   },
   "theme": {
     "default": "system",
