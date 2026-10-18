@@ -235,13 +235,14 @@
     const card = document.createElement("a");
     card.className = "site-card";
 
-    // Each card opens the specific website configured in sites.json.
-    card.href = safeURL(site.url, "#");
-    card.target = "_blank";
-    card.rel = "noopener noreferrer";
+    // Open the project's detail page first, where the user can star the repo
+    // or continue to the configured website.
+    card.href = resolveURL(
+      `projects/?site=${encodeURIComponent(site.id)}`
+    );
 
     card.style.animationDelay = `${Math.min(index * 65, 400)}ms`;
-    card.setAttribute("aria-label", `Visit ${site.name}`);
+    card.setAttribute("aria-label", `View ${site.name}`);
 
     const top = document.createElement("div");
     top.className = "card-top";
