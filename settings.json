@@ -6,10 +6,6 @@
   "starButton": {
     "enabled": true,
     "text": "If you like this project, consider starring its repository.",
-    "repoUrl": "https://github.com/yellowhicmd/GD-Macros"
-    "text": "If you like this project, consider starring its repository.",
-    "repoUrl": "https://github.com/yellowhicmd/GD-Download"
-    "text": "If you like this project, consider starring its repository.",
     "repoUrl": "https://github.com/yellowhicmd/Project-Hub"
   },
   "theme": {
