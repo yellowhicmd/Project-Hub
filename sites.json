@@ -9,7 +9,7 @@
       "category": "Web App",
       "featured": true,
       "githubRepo": "https://github.com/yellowhicmd/GD-Macros"
-    },
+    }
     {
       "id": "gd-download",
       "name": "GD-Download",
@@ -29,6 +29,6 @@
       "category": "App",
       "featured": true,
       "githubRepo": "https://github.com/yellowhicmd/QUICKUTILS-Suite"
-    }
+    },
   ]
 }
