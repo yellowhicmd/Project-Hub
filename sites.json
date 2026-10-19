@@ -20,7 +20,7 @@
       "featured": true,
       "githubRepo": "https://github.com/yellowhicmd/GD-Download"
     }
-        {
+    {
       "id": "Quickutils-Suite",
       "name": "QUICKUTILS-Suite",
       "url": "https://github.com/yellowhicmd/QUICKUTILS-Suite",
@@ -29,6 +29,6 @@
       "category": "App",
       "featured": true,
       "githubRepo": "https://github.com/yellowhicmd/QUICKUTILS-Suite"
-        }
+    }
   ]
 }
