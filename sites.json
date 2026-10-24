@@ -1,44 +1,44 @@
 {
-  "sites": [
-    {
-      "id": "gd-macros",
-      "name": "GD-Macros",
-      "url": "https://gd-macros.pages.dev",
-      "description": "A website hosting a collection of all my GD Macros.",
-      "icon": "",
-      "category": "Web App",
-      "featured": true,
-      "githubRepo": "https://github.com/yellowhicmd/GD-Macros"
-    },
-    {
-      "id": "gd-download",
-      "name": "GD-Download",
-      "url": "https://gd-download.pages.dev",
-      "description": "A website to download Geometry Dash for free",
-      "icon": "",
-      "category": "Web App",
-      "featured": true,
-      "githubRepo": "https://github.com/yellowhicmd/GD-Download"
-    },
-    {
-      "id": "Quickutils-Suite",
-      "name": "QUICKUTILS-Suite",
-      "url": "https://github.com/yellowhicmd/QUICKUTILS-Suite",
-      "description": "A lightweight, terminal-based Windows utility suite featuring a Cyberpunk Blue ANSI interface.",
-      "icon": "",
-      "category": "App",
-      "featured": true,
-      "githubRepo": "https://github.com/yellowhicmd/QUICKUTILS-Suite"
-    }
-    {
-      "id": "Arctic-Messenger",
-      "name": "Arctic-Messenger",
-      "url": "https://arctic.wasmer.app",
-      "description": "A decentralized P2P end-to-end encrypted messaging app.",
-      "icon": "",
-      "category": "Messaging App",
-      "featured": true,
-      "githubRepo": "https://github.com/yellowhicmd/QUICKUTILS-Suite"
-    },
-  ]
+"sites": [
+{
+"id": "gd-macros",
+"name": "GD-Macros",
+"url": "https://gd-macros.pages.dev",
+"description": "A website hosting a collection of all my GD Macros.",
+"icon": "",
+"category": "Web App",
+"featured": true,
+"githubRepo": "https://github.com/yellowhicmd/GD-Macros"
+},
+{
+"id": "gd-download",
+"name": "GD-Download",
+"url": "https://gd-download.pages.dev",
+"description": "A website to download Geometry Dash for free",
+"icon": "",
+"category": "Web App",
+"featured": true,
+"githubRepo": "https://github.com/yellowhicmd/GD-Download"
+},
+{
+"id": "Quickutils-Suite",
+"name": "QUICKUTILS-Suite",
+"url": "https://github.com/yellowhicmd/QUICKUTILS-Suite",
+"description": "A lightweight, terminal-based Windows utility suite featuring a Cyberpunk Blue ANSI interface.",
+"icon": "",
+"category": "App",
+"featured": true,
+"githubRepo": "https://github.com/yellowhicmd/QUICKUTILS-Suite"
+},
+{
+"id": "Arctic-Messenger",
+"name": "Arctic-Messenger",
+"url": "https://arctic.wasmer.app",
+"description": "A decentralized P2P end-to-end encrypted messaging app.",
+"icon": "",
+"category": "Messaging App",
+"featured": true,
+"githubRepo": "https://github.com/yellowhicmd/Arctic-Messenger"
+}
+]
 }
