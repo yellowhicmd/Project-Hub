@@ -3,8 +3,8 @@
 
 const $ = (selector) => document.querySelector(selector);
 
-const isProjectPage = //projects/?$/.test(
-window.location.pathname
+const isProjectPage = /\/projects\/?$/.test(
+  window.location.pathname
 );
 
 const baseURL = new URL(
