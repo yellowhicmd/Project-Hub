@@ -17,7 +17,7 @@
 "description": "A website to download Geometry Dash for free",
 "icon": "",
 "category": "Web App",
-"featured": true,
+"featured": false,
 "githubRepo": "https://github.com/yellowhicmd/GD-Download"
 },
 {
@@ -27,7 +27,7 @@
 "description": "A lightweight, terminal-based Windows utility suite featuring a Cyberpunk Blue ANSI interface.",
 "icon": "",
 "category": "App",
-"featured": true,
+"featured": false,
 "githubRepo": "https://github.com/yellowhicmd/QUICKUTILS-Suite"
 },
 {
