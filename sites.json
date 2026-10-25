@@ -1,6 +1,16 @@
 {
 "sites": [
 {
+"id": "Arctic-Messenger",
+"name": "Arctic-Messenger",
+"url": "https://arctic.wasmer.app",
+"description": "A decentralized P2P end-to-end encrypted messaging app.",
+"icon": "",
+"category": "Messaging App",
+"featured": true,
+"githubRepo": "https://github.com/yellowhicmd/Arctic-Messenger"
+}
+{
 "id": "gd-macros",
 "name": "GD-Macros",
 "url": "https://gd-macros.pages.dev",
@@ -29,16 +39,6 @@
 "category": "App",
 "featured": false,
 "githubRepo": "https://github.com/yellowhicmd/QUICKUTILS-Suite"
-},
-{
-"id": "Arctic-Messenger",
-"name": "Arctic-Messenger",
-"url": "https://arctic.wasmer.app",
-"description": "A decentralized P2P end-to-end encrypted messaging app.",
-"icon": "",
-"category": "Messaging App",
-"featured": true,
-"githubRepo": "https://github.com/yellowhicmd/Arctic-Messenger"
 }
 ]
 }
